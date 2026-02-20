@@ -1,0 +1,279 @@
+.resources-panel {
+    margin: 0 12px 6px;
+    margin-left: 56px;
+    background: rgba(10, 12, 26, 0.7);
+    border: 1px solid rgba(124, 92, 252, 0.2);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    animation: rp-open 0.2s ease;
+}
+
+@keyframes rp-open {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.rp-section {
+    padding: 12px 14px;
+}
+
+.rp-section+.rp-section {
+    border-top: 1px solid rgba(124, 92, 252, 0.12);
+}
+
+.rp-section-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--clr-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 10px;
+}
+
+.rp-section-header span:first-child {
+    flex: 1;
+}
+
+.rp-icon-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    transition: var(--transition);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--clr-border);
+    cursor: pointer;
+}
+
+.rp-icon-btn:hover {
+    background: rgba(124, 92, 252, 0.2);
+    border-color: var(--clr-purple);
+}
+
+/* Empty state button */
+.rp-empty-btn {
+    width: 100%;
+    padding: 8px;
+    border: 1.5px dashed rgba(124, 92, 252, 0.3);
+    border-radius: var(--radius-sm);
+    color: var(--clr-muted);
+    font-size: 12px;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.rp-empty-btn:hover {
+    border-color: var(--clr-purple);
+    color: var(--clr-purple-light);
+    background: rgba(124, 92, 252, 0.06);
+}
+
+/* Video input row */
+.rp-video-input-row {
+    display: flex;
+    gap: 8px;
+}
+
+.rp-input {
+    flex: 1;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1.5px solid var(--clr-border);
+    border-radius: var(--radius-sm);
+    color: var(--clr-text);
+    font-size: 12px;
+    outline: none;
+    transition: var(--transition);
+}
+
+.rp-input:focus {
+    border-color: var(--clr-purple);
+    box-shadow: 0 0 0 3px rgba(124, 92, 252, 0.12);
+}
+
+.rp-input::placeholder {
+    color: var(--clr-muted);
+}
+
+.rp-save-btn {
+    padding: 7px 14px;
+    background: var(--clr-purple);
+    color: white;
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+}
+
+.rp-save-btn:hover:not(:disabled) {
+    background: var(--clr-purple-light);
+}
+
+.rp-save-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* YouTube thumbnail */
+.rp-yt-thumb {
+    display: block;
+    position: relative;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.rp-yt-thumb img {
+    width: 100%;
+    height: 90px;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.85);
+    transition: filter 0.2s ease;
+}
+
+.rp-yt-thumb:hover img {
+    filter: brightness(1);
+}
+
+.rp-play-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background: rgba(0, 0, 0, 0.4);
+    transition: background 0.2s ease;
+}
+
+.rp-yt-thumb:hover .rp-play-overlay {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.rp-play-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 0, 0, 0.85);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: white;
+    box-shadow: 0 2px 12px rgba(255, 0, 0, 0.4);
+}
+
+.rp-play-label {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 600;
+}
+
+/* Link pill */
+.rp-link-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: rgba(79, 195, 247, 0.1);
+    border: 1px solid rgba(79, 195, 247, 0.3);
+    border-radius: 20px;
+    color: var(--clr-blue);
+    font-size: 12px;
+    text-decoration: none;
+    transition: var(--transition);
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.rp-link-pill:hover {
+    background: rgba(79, 195, 247, 0.18);
+    border-color: var(--clr-blue);
+}
+
+/* File list */
+.rp-file-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.rp-file-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.rp-file-item:hover {
+    background: rgba(124, 92, 252, 0.07);
+}
+
+.rp-file-icon {
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.rp-file-name {
+    flex: 1;
+    font-size: 12px;
+    color: var(--clr-text);
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.rp-file-name:hover {
+    color: var(--clr-purple-light);
+    text-decoration: underline;
+}
+
+.rp-remove-btn {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: var(--clr-muted);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    flex-shrink: 0;
+    border: none;
+}
+
+.rp-remove-btn:hover {
+    color: var(--clr-pink);
+    background: rgba(240, 98, 146, 0.12);
+}

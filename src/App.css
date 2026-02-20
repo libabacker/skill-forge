@@ -1,0 +1,164 @@
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  gap: 20px;
+  padding: 24px 20px 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+/* Sidebar backdrop (mobile) */
+.sidebar-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 140;
+  backdrop-filter: blur(2px);
+}
+
+/* Main content area */
+.app-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand-icon {
+  font-size: 36px;
+  filter: drop-shadow(0 0 12px rgba(105, 240, 174, 0.5));
+  animation: sway 4s ease-in-out infinite;
+}
+
+@keyframes sway {
+
+  0%,
+  100% {
+    transform: rotate(-4deg);
+  }
+
+  50% {
+    transform: rotate(4deg);
+  }
+}
+
+.brand-title {
+  font-size: 28px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #a97aff, #4fc3f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+
+.brand-sub {
+  font-size: 12px;
+  color: var(--clr-muted);
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+/* Tree container */
+.tree-container {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.tree-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--clr-border);
+  background: rgba(124, 92, 252, 0.04);
+}
+
+.tree-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--clr-text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tree-title-icon {
+  font-size: 18px;
+}
+
+.tree-hint {
+  font-size: 12px;
+  color: var(--clr-muted);
+}
+
+.tree-body {
+  padding: 10px 8px;
+}
+
+/* Footer */
+.app-footer {
+  text-align: center;
+  font-size: 12px;
+  color: var(--clr-muted);
+}
+
+.app-footer kbd {
+  display: inline-block;
+  padding: 1px 5px;
+  background: var(--clr-surface2);
+  border: 1px solid var(--clr-border);
+  border-radius: 4px;
+  font-family: 'Fira Code', monospace;
+  font-size: 11px;
+  color: var(--clr-purple-light);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app-shell {
+    flex-direction: column;
+    padding: 64px 12px 60px;
+  }
+
+  .sidebar-backdrop {
+    display: block;
+  }
+
+  .brand-title {
+    font-size: 22px;
+  }
+
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,281 @@
+.skill-node {
+    width: 100%;
+}
+
+.skill-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+    position: relative;
+    cursor: default;
+}
+
+.skill-row::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    border-radius: 2px;
+    background: transparent;
+    transition: var(--transition);
+}
+
+.skill-row:hover {
+    background: rgba(124, 92, 252, 0.07);
+}
+
+.skill-row:hover::before {
+    background: var(--clr-purple);
+}
+
+.skill-row.completed {
+    background: rgba(105, 240, 174, 0.05);
+}
+
+.skill-row.completed::before {
+    background: var(--clr-green);
+}
+
+/* Expand/Collapse button */
+.expand-btn {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    color: var(--clr-muted);
+    transition: var(--transition);
+    font-size: 9px;
+}
+
+.expand-btn:hover {
+    background: rgba(124, 92, 252, 0.2);
+    color: var(--clr-purple-light);
+}
+
+.expand-btn.invisible {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.expand-arrow {
+    display: inline-block;
+    transition: transform 0.22s ease;
+}
+
+/* Custom checkbox */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.checkbox-label input[type='checkbox'] {
+    display: none;
+}
+
+.custom-check {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    border-radius: 5px;
+    border: 2px solid var(--clr-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    background: transparent;
+}
+
+.custom-check.checked {
+    background: linear-gradient(135deg, var(--clr-green), #00c853);
+    border-color: var(--clr-green);
+    box-shadow: 0 0 10px rgba(105, 240, 174, 0.4);
+}
+
+.check-mark {
+    font-size: 11px;
+    color: #0d1117;
+    font-weight: 800;
+    line-height: 1;
+}
+
+/* Skill name */
+.skill-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--clr-text);
+    transition: var(--transition);
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.skill-row.completed .skill-name,
+.skill-name.skill-done {
+    color: var(--clr-muted);
+    text-decoration: line-through;
+    text-decoration-color: rgba(105, 240, 174, 0.5);
+}
+
+/* Child count badge */
+.child-count {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    background: rgba(124, 92, 252, 0.15);
+    border: 1px solid rgba(124, 92, 252, 0.3);
+    border-radius: 20px;
+    color: var(--clr-purple-light);
+    font-family: 'Fira Code', monospace;
+    min-width: 22px;
+    text-align: center;
+}
+
+/* Resource indicator — subtle, always visible when resources exist */
+.res-indicator {
+    font-size: 12px;
+    opacity: 0.55;
+    cursor: default;
+    flex-shrink: 0;
+}
+
+/* Row action buttons group */
+.row-actions {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    opacity: 0;
+    transition: opacity 0.18s ease;
+    flex-shrink: 0;
+}
+
+.skill-row:hover .row-actions {
+    opacity: 1;
+}
+
+.action-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    background: transparent;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--clr-muted);
+}
+
+.action-btn:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--clr-border);
+}
+
+.action-btn.add-child-btn:hover {
+    background: rgba(124, 92, 252, 0.2);
+    border-color: rgba(124, 92, 252, 0.5);
+    color: var(--clr-purple-light);
+}
+
+.action-btn.res-btn:hover,
+.action-btn.res-btn.active {
+    background: rgba(79, 195, 247, 0.15);
+    border-color: rgba(79, 195, 247, 0.4);
+}
+
+.action-btn.delete-btn:hover {
+    background: rgba(240, 98, 146, 0.15);
+    border-color: rgba(240, 98, 146, 0.4);
+    color: var(--clr-pink);
+}
+
+/* Inline delete confirm */
+.delete-confirm {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    animation: fade-confirm 0.12s ease;
+}
+
+@keyframes fade-confirm {
+    from {
+        opacity: 0;
+        transform: scale(0.88);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.delete-ask {
+    font-size: 11px;
+    color: var(--clr-pink);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.confirm-yes {
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    background: rgba(240, 98, 146, 0.18);
+    border: 1px solid rgba(240, 98, 146, 0.5);
+    color: var(--clr-pink);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.confirm-yes:hover {
+    background: rgba(240, 98, 146, 0.32);
+}
+
+.confirm-no {
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--clr-border);
+    color: var(--clr-muted);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.confirm-no:hover {
+    background: rgba(255, 255, 255, 0.09);
+    color: var(--clr-text);
+}
+
+/* Children container */
+.children-container {
+    border-left: 1px solid rgba(124, 92, 252, 0.12);
+    margin-left: 22px;
+    animation: expand-in 0.18s ease;
+}
+
+@keyframes expand-in {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,210 @@
+.ca-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 5, 15, 0.88);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: ca-fade-in 0.3s ease;
+    overflow: hidden;
+}
+
+@keyframes ca-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Floating particles */
+.ca-particle {
+    position: absolute;
+    top: -30px;
+    pointer-events: none;
+    animation: ca-float linear forwards;
+    user-select: none;
+}
+
+@keyframes ca-float {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(720deg) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Alert card */
+.ca-card {
+    position: relative;
+    background: linear-gradient(145deg, #1a1040, #0f1a2e);
+    border: 1px solid rgba(124, 92, 252, 0.5);
+    border-radius: 24px;
+    padding: 44px 48px;
+    max-width: 480px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 0 80px rgba(124, 92, 252, 0.3), 0 24px 60px rgba(0, 0, 0, 0.5);
+    animation: ca-pop-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    overflow: hidden;
+}
+
+@keyframes ca-pop-in {
+    from {
+        opacity: 0;
+        transform: scale(0.6) translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Rotating glow ring behind card */
+.ca-glow-ring {
+    position: absolute;
+    inset: -30px;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg,
+            transparent 0%,
+            rgba(124, 92, 252, 0.3) 25%,
+            rgba(255, 215, 64, 0.2) 50%,
+            rgba(105, 240, 174, 0.3) 75%,
+            transparent 100%);
+    animation: ca-spin 4s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(20px);
+}
+
+@keyframes ca-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.ca-trophy {
+    font-size: 64px;
+    display: block;
+    margin-bottom: 16px;
+    animation: ca-bounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
+    filter: drop-shadow(0 0 20px rgba(255, 215, 64, 0.8));
+}
+
+@keyframes ca-bounce {
+    from {
+        opacity: 0;
+        transform: scale(0) rotate(-20deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.ca-title {
+    font-size: 28px;
+    font-weight: 800;
+    background: linear-gradient(90deg, #ffd740, #ffab40, #ff6d00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+.ca-topic {
+    font-size: 14px;
+    color: var(--clr-muted);
+    margin-bottom: 12px;
+}
+
+.ca-topic-name {
+    display: inline-block;
+    padding: 4px 16px;
+    background: rgba(124, 92, 252, 0.15);
+    border: 1px solid rgba(124, 92, 252, 0.4);
+    border-radius: 20px;
+    color: var(--clr-purple-light);
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.ca-subtitle {
+    font-size: 13px;
+    color: var(--clr-muted);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* XP burst badge */
+.ca-xp-burst {
+    display: inline-block;
+    padding: 6px 20px;
+    background: linear-gradient(135deg, rgba(255, 215, 64, 0.2), rgba(255, 171, 64, 0.1));
+    border: 1.5px solid rgba(255, 215, 64, 0.5);
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--clr-yellow);
+    letter-spacing: 1.5px;
+    margin-bottom: 22px;
+    animation: ca-pulse 1.5s ease-in-out infinite;
+    font-family: 'Fira Code', monospace;
+}
+
+@keyframes ca-pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 215, 64, 0);
+    }
+
+    50% {
+        box-shadow: 0 0 16px 4px rgba(255, 215, 64, 0.3);
+    }
+}
+
+.ca-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, var(--clr-purple), #9c6bff);
+    border: none;
+    border-radius: var(--radius-md);
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    letter-spacing: 0.3px;
+}
+
+.ca-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(124, 92, 252, 0.5);
+}
+
+.ca-auto {
+    margin-top: 12px;
+    font-size: 11px;
+    color: rgba(136, 146, 176, 0.5);
+}
