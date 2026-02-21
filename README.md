@@ -2,18 +2,18 @@
   <img src="C:\Users\AAA\.gemini\antigravity\brain\c01c84fd-2ee9-41a7-9e65-75c8ccfc3d9a\skillforge_final_state_1771613945871.png" alt="Project Banner" width="100%">
 </p>
 
-# SkillForge �
+# SkillForge 
 
 ## Basic Details
 
-### Team Name: SkillForge Team
+### Team Name: pinkpixels
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: Antigravity (AI Pair Programmer) - Google Deepmind
+- Member 1: LIBA - College OF ENGINEERING KALLOOPARA
+- Member 2: GOURI SANEESH- College OF ENGINEERING KALLOOPARA
 
 ### Hosted Project Link
-[Local Hosted Link: http://localhost:5173/](http://localhost:5173/)
+[Local Hosted Link: https://skill-forge-kohl.vercel.app/
 
 ### Project Description
 SkillForge is a premium, gamified learning path tracker that transforms your educational roadmap into an interactive journey. It features a recursive skill tree, resource management, and a delightful reward system including a walking traveler progress animation and a Duolingo-style streak counter.
@@ -132,8 +132,8 @@ SkillForge uses a **Component-Based Architecture** in React:
 
 ## Team Contributions
 
-- [Name 1]: Project Lead, Creative Direction, Data Curation.
-- Antigravity: UI/UX Development, Recursive Logic, Feature Implementation, Documentation.
+- LIBA: Project Lead, Creative Direction, Data Curation.
+- GOURI SANEESH: UI/UX Development, Recursive Logic, Feature Implementation, Documentation.
 
 ---
 
