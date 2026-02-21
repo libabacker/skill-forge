@@ -75,16 +75,11 @@ npm run dev
 
 ### For Software:
 
-#### Screenshots (Add at least 3)
+#### Screenshots 
+<img width="1421" height="777" alt="image" src="https://github.com/user-attachments/assets/4e160347-e965-4cc5-ba1a-d9c61cc224b6" />
+<img width="344" height="527" alt="image" src="https://github.com/user-attachments/assets/36b12ea2-1c7c-47b9-b003-d9eda0cf97c6" />
+<img width="1550" height="797" alt="image" src="https://github.com/user-attachments/assets/ab7cd6a1-3786-43e7-a000-37272bade91d" />
 
-![Sidebar & Filtering](C:\Users\AAA\.gemini\antigravity\brain\c01c84fd-2ee9-41a7-9e65-75c8ccfc3d9a\feature1_sidebar_filtered_1771615530265.png)
-*The Category Sidebar allows for quick navigation and filtering of complex curricula.*
-
-![Resources Panel](C:\Users\AAA\.gemini\antigravity\brain\c01c84fd-2ee9-41a7-9e65-75c8ccfc3d9a\feature2_resources_saved_1771615575684.png)
-*Each skill has a dedicated vault for YouTube videos and uploaded course files.*
-
-![Mastery Alert](C:\Users\AAA\.gemini\antigravity\brain\c01c84fd-2ee9-41a7-9e65-75c8ccfc3d9a\feature4_completion_alert_1771615723543.png)
-*Completing a major topic triggers a celebratory fullscreen overlay and XP bonus.*
 
 #### Diagrams
 
